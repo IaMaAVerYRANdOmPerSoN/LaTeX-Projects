@@ -1,0 +1,67 @@
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+
+\title{Polynomial Divisbility Rules \\ Art of Problem Solving}
+\author{Michael Xie}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+In this article, we explore the relationship between the zeroes of two polynomials and divisibility. Specifically, we address the following problem:
+
+\textbf{Problem:}
+
+\textbf{Part (a):}
+
+Let $f(x)$ and $g(x)$ be polynomials.
+
+Suppose $f(x)=0$ for exactly three complex values of $x$: namely, $x=-3,4,$ and $8$.
+
+Suppose $g(x)=0$ for exactly five complex values of $x$: namely, $x=-5,-3,2,4,$ and $8$.
+
+Is it necessarily true that $g(x)$ is divisible by $f(x)$? If so, carefully explain why. If not, give an example where $g(x)$ is not divisible by $f(x)$.
+
+\textbf{Part (b):}
+
+Generalize: for arbitrary polynomials $f(x)$ and $g(x)$, what do we need to know about the zeroes (including complex zeroes) of $f(x)$ and $g(x)$ to infer that $g(x)$ is divisible by $f(x)$?
+
+(If your answer to Part (a) was "yes", then stating the generalization should be straightforward. If your answer to Part (a) was "no", then try to salvage the idea by imposing extra conditions as needed. Either way, prove your generalization.)
+
+\section{A: is $g(x)$ divisible by $f(x)$?}
+
+\textbf{$g(x)$ is not divisible by $f(x)$}
+
+let us begin with the simplest possible $f$ and $g$
+
+\[ f(x) = (x+3)(x-4)(x-8) \]
+\[ g(x) = (x+5)(x+3)(x-2)(x-4)(x-8) \]
+
+This divides evenly. All the terms in the denominator cancel out.
+
+\begin{align*}
+    \frac{g(x)}{f(x)} & = \frac{(x+5)(x+3)(x-2)(x-4)(x-8)}{(x+3)(x-4)(x-8)}
+    & = (x+5)(x-2)
+\end{align*}
+
+We must be careful here. We cannot add aditional terms, as that would add an addtional root, However we may double one of the terms in $f(x)$ as this does not increase the number of roots.
+
+\[ f(x) = (x+3)^2(x-4)(x-8) \]
+
+Now when we divide, we get:
+
+\[
+\frac{g(x)}{f(x)} = \frac{(x+5)(x+3)(x-2)(x-4)(x-8)}{(x+3)^2(x-4)(x-8)}
+\]
+
+This simplifies to:
+
+\[
+\frac{g(x)}{f(x)} = \frac{(x+5)(x-2)}{(x+3)}
+\]
+
+Since the result is not a polynomial (due to the division by \((x+3)\)), we conclude that \(g(x)\) is not divisible by \(f(x)\), thus providing a counterexample.
+
+\end{document}

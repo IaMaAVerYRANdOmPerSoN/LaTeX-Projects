@@ -1,0 +1,91 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+\title{Application of the Cauchy-Schwarz Inequality and the Arithmetic-Geometric Mean Inequality}
+\author{mxsail,\\Intermediate Algebra,\\Art of Problem Solving}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+\section*{Problem Statement}
+\begin{enumerate}
+    \item[(a)] Show that if $a,$ $b,$ $c,$ $d,$ $e,$ $f$ are nonnegative real numbers, then
+    \[
+    (a^2 + b^2)^2 (c^4 + d^4)(e^4 + f^4) \ge (ace + bdf)^4.
+    \]
+    \item[(b)] Show that if $a,$ $b,$ $c,$ $d,$ $e,$ $f$ are nonnegative real numbers, then
+    \[
+    (a^2 + b^2)(c^2 + d^2)(e^2 + f^2) \ge (ace + bdf)^2.
+    \]
+\end{enumerate}
+
+\section*{Solution}
+Both parts of the problem can be solved using the Cauchy-Schwarz inequality and the Arithmetic-Geometric Mean (AM-GM) inequality.
+
+\subsection*{Part (a)}
+We begin by applying the Cauchy-Schwarz inequality:
+\[
+(c^4 + d^4)(e^4 + f^4) \ge (c^2e^2 + d^2f^2)^2.
+\]
+Multiplying both sides by $(a^2 + b^2)^2$ gives:
+\[
+(a^2 + b^2)^2(c^4 + d^4)(e^4 + f^4) \ge (a^2 + b^2)^2(c^2e^2 + d^2f^2)^2.
+\]
+Now we expand the right-hand side:
+\[
+(a^2 + b^2)^2(c^2e^2 + d^2f^2)^2 = \left(a^2c^2e^2 + a^2d^2f^2 + b^2c^2e^2 + b^2d^2f^2\right)^2.
+\]
+
+Let us group the terms:
+\[
+\left(a^2c^2e^2 + b^2d^2f^2 + a^2d^2f^2 + b^2c^2e^2\right)^2.
+\]
+
+Apply AM-GM to the middle two terms:
+\[
+a^2d^2f^2 + b^2c^2e^2 \ge 2\sqrt{a^2d^2f^2 \cdot b^2c^2e^2} = 2abcdef.
+\]
+Hence,
+\[
+\left(a^2c^2e^2 + b^2d^2f^2 + 2abcdef\right)^2 \ge (ace + bdf)^4.
+\]
+
+Thus, we conclude:
+\[
+(a^2 + b^2)^2(c^4 + d^4)(e^4 + f^4) \ge (ace + bdf)^4.
+\]
+
+\subsection*{Part (b)}
+We expand the left-hand side:
+\begin{align*}
+&(a^2 + b^2)(c^2 + d^2)(e^2 + f^2) = \\
+&\quad a^2c^2e^2 + a^2c^2f^2 + a^2d^2e^2 + a^2d^2f^2 + b^2c^2e^2 + b^2c^2f^2 + b^2d^2e^2 + b^2d^2f^2.
+\end{align*}
+
+Group $a^2c^2e^2$ and $b^2d^2f^2$ separately. Apply AM-GM to the remaining six terms:
+\[
+a^2c^2f^2 + a^2d^2e^2 + a^2d^2f^2 + b^2c^2e^2 + b^2c^2f^2 + b^2d^2e^2 \ge 6\sqrt[6]{(a^2b^2c^4d^4e^4f^4)} = 6abcdef.
+\]
+
+So the total expression satisfies:
+\[
+(a^2 + b^2)(c^2 + d^2)(e^2 + f^2) \ge a^2c^2e^2 + b^2d^2f^2 + 6abcdef.
+\]
+
+Now, observe that:
+\[
+a^2c^2e^2 + b^2d^2f^2 + 6abcdef \ge (ace + bdf)^2,
+\]
+since
+\[
+(ace + bdf)^2 = a^2c^2e^2 + b^2d^2f^2 + 2abcdef \le a^2c^2e^2 + b^2d^2f^2 + 6abcdef.
+\]
+
+Therefore, we conclude:
+\[
+(a^2 + b^2)(c^2 + d^2)(e^2 + f^2) \ge (ace + bdf)^2.
+\]
+
+\end{document}

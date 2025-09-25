@@ -1,0 +1,92 @@
+\documentclass{article}
+\usepackage{amsmath}
+
+\title{Quadratic equations with aboslute value}
+\author{Michael Xie, \\ Art of Problem Solving}
+
+
+\begin{document}
+
+\maketitle
+
+\section*{Problem}
+Find all solutions of the equation
+\[
+|x^2 - 30x - 1| = 30.
+\]
+
+\section*{Solution}
+To fins solutions to the equation \( |x^2 - 30x - 1| = 30 \), we need to consider two cases:
+
+\begin{center}
+    \textbf{Case 1:} \( x^2 - 30x - 1 = 30, \) \\
+    \textbf{Case 2:} \( x^2 - 30x - 1 = -30 \)
+\end{center}
+
+\subsection*{Case 1: \( x^2 - 30x - 1 = 30 \)}
+\[
+x^2 - 30x - 1 = 30,
+\]
+\[
+x^2 - 30x - 31 = 0
+\]
+We solve this quadratic equation using the quadratic formula \( x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a} \):
+\[
+a = 1, \quad b = -30, \quad c = -31
+\]
+\[
+x = \frac{30 \pm \sqrt{(-30)^2 - 4 \cdot 1 \cdot (-31)}}{2 \cdot 1},
+\]
+\[
+x = \frac{30 \pm \sqrt{900 + 124}}{2},
+\]
+\[
+x = \frac{30 \pm \sqrt{1024}}{2},
+\]
+\[
+x = \frac{30 \pm 32}{2},
+\]
+\[
+x = \frac{30 + 32}{2} \quad \text{or} \quad x = \frac{30 - 32}{2},
+\]
+\[
+x = 31 \quad \text{or} \quad x = -1.
+\]
+
+\subsection*{Case 2: \( x^2 - 30x - 1 = -30 \)}
+\[
+x^2 - 30x - 1 = -30,
+\]
+\[
+x^2 - 30x + 29 = 0
+\]
+We solve this quadratic equation using the quadratic formula:
+\[
+a = 1, \quad b = -30, \quad c = 29
+\]
+\[
+x = \frac{30 \pm \sqrt{(-30)^2 - 4 \cdot 1 \cdot 29}}{2 \cdot 1},
+\]
+\[
+x = \frac{30 \pm \sqrt{900 - 116}}{2},
+\]
+\[
+x = \frac{30 \pm \sqrt{784}}{2},
+\]
+\[
+x = \frac{30 \pm 28}{2},
+\]
+\[
+x = \frac{30 + 28}{2} \quad \text{or} \quad x = \frac{30 - 28}{2},
+\]
+\[
+x = 29 \quad \text{or} \quad x = 1.
+\]
+
+\subsection*{Conclusion}
+The solutions to the equation \( |x^2 - 30x - 1| = 30 \) are:
+\[
+x = 31, \quad x = -1, \quad x = 29, \quad x = 1
+\]
+
+\end{document}

@@ -1,0 +1,92 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+\title{Week 18 Writing Problem}
+\author{mxsail}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\section*{Problem Statment}
+Let
+\[f(x) = \frac{x - \sqrt{3}}{x\sqrt{3} + 1}.\]What is $f^{2012}(x)$, where the function is being applied $2012$ times?
+This notation indicates repeated composition of functions, not exponentiation of functions. For example,\[f^2(x)=f(f(x))\]and not $f(x) \cdot f(x).$ Similarly,\[f^3(x)=f(f(f(x))).\]
+
+\section*{Solution}
+The key observation is to note that $f(x)$ is a Möbius transformation, and repeated application of $f$ can be analyzed by studying its properties.
+
+Let us compute the first few iterations:
+\[
+f(x) = \frac{x - \sqrt{3}}{x\sqrt{3} + 1}
+\]
+\[
+f^2(x) = f(f(x)) = \frac{f(x) - \sqrt{3}}{f(x)\sqrt{3} + 1}
+\]
+Substitute $f(x)$:
+\[
+f^2(x) = \frac{\frac{x - \sqrt{3}}{x\sqrt{3} + 1} - \sqrt{3}}{\frac{x - \sqrt{3}}{x\sqrt{3} + 1}\sqrt{3} + 1}
+\]
+\begin{align*}
+&\frac{x - \sqrt{3} - \sqrt{3}(x\sqrt{3} + 1)}{x\sqrt{3} + 1} \\
+&= \frac{x - \sqrt{3} - x\cdot 3 - \sqrt{3}}{x\sqrt{3} + 1} \\
+&= \frac{x - 3x - \sqrt{3} - \sqrt{3}}{x\sqrt{3} + 1} \\
+&= \frac{-2x - 2\sqrt{3}}{x\sqrt{3} + 1}
+\end{align*}
+Simplify denominator:
+\[
+\frac{(x - \sqrt{3})\sqrt{3}}{x\sqrt{3} + 1} + 1
+= \frac{x\sqrt{3} - 3}{x\sqrt{3} + 1} + 1
+= \frac{x\sqrt{3} - 3 + x\sqrt{3} + 1}{x\sqrt{3} + 1}
+= \frac{2x\sqrt{3} - 2}{x\sqrt{3} + 1}
+\]
+So,
+\[
+f^2(x) = \frac{-2(x + \sqrt{3})}{2(x\sqrt{3} - 1)} = -\frac{x + \sqrt{3}}{x\sqrt{3} - 1}
+\]
+
+Now, compute $f^3(x)$:
+\[
+f^3(x) = f(f^2(x)) = \frac{f^2(x) - \sqrt{3}}{f^2(x)\sqrt{3} + 1}
+\]
+Let $y = f^2(x) = -\frac{x + \sqrt{3}}{x\sqrt{3} - 1}$:
+\[
+f^3(x) = \frac{-\frac{x + \sqrt{3}}{x\sqrt{3} - 1} - \sqrt{3}}{-\frac{x + \sqrt{3}}{x\sqrt{3} - 1}\sqrt{3} + 1}
+\]
+Numerator:
+\begin{align*}
+&-\frac{x + \sqrt{3}}{x\sqrt{3} - 1} - \sqrt{3} \\
+&= \frac{-(x + \sqrt{3}) - \sqrt{3}(x\sqrt{3} - 1)}{x\sqrt{3} - 1} \\
+&= \frac{-(x + \sqrt{3}) - x\cdot 3 + \sqrt{3}}{x\sqrt{3} - 1} \\
+&= \frac{-(x + \sqrt{3}) - 3x + \sqrt{3}}{x\sqrt{3} - 1} \\
+&= \frac{-x - \sqrt{3} - 3x + \sqrt{3}}{x\sqrt{3} - 1} \\
+&= \frac{-4x}{x\sqrt{3} - 1}
+\end{align*}
+Denominator:
+\begin{align*}
+&-\frac{x + \sqrt{3}}{x\sqrt{3} - 1}\sqrt{3} + 1 \\
+&= -\frac{(x + \sqrt{3})\sqrt{3}}{x\sqrt{3} - 1} + 1 \\
+&= \frac{-(x\sqrt{3} + 3) + (x\sqrt{3} - 1)}{x\sqrt{3} - 1} \\
+&= \frac{-(x\sqrt{3} + 3) + x\sqrt{3} - 1}{x\sqrt{3} - 1} \\
+&= \frac{-3 - 1}{x\sqrt{3} - 1} \\
+&= \frac{-4}{x\sqrt{3} - 1}
+\end{align*}
+So,
+\[
+f^3(x) = \frac{-4x}{-4} = x
+\]
+
+Thus, $f^3(x) = x$, so $f$ is of order $3$ under composition. Therefore,
+\[
+f^{2012}(x) = f^{2012 \bmod 3}(x)
+\]
+Since $2012 \div 3 = 670$ remainder $2$, $2012 \bmod 3 = 2$.
+
+Therefore,
+\[
+\boxed{f^{2012}(x) = f^2(x) = -\frac{x + \sqrt{3}}{x\sqrt{3} - 1}}
+\]
+
+\end{document}

@@ -1,0 +1,98 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,      
+    urlcolor=cyan,
+    pdftitle={Overleaf Example},
+    pdfpagemode=FullScreen,
+    }
+
+\title{Trinomial roots and arithmetic progressions}
+\author{Michael Xie, \\
+        Art of Problem Solving, \\
+        Intermediate Algebra}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+\section{Problem}
+\subsection{(a)}
+
+Prove that if the roots of
+\[x^3 + ax^2 + bx + c = 0\]
+form an arithmetic sequence, then $2a^3 + 27c = 9ab.$
+
+\subsection{(b)}
+Prove that if $2a^3 + 27c = 9ab,$ then the roots of
+\[x^3 + ax^2 + bx + c = 0\]
+form an arithmetic sequence.
+
+\section{Solution}
+\subsection{(a)}
+Let the roots of the polynomial be $r_1, r_2, r_3$. Since they are in arithmetic progression, we can express them as:
+\[r_1 = r\]
+\[r_2 = r + d\]
+\[r_3 = r + 2d\]
+where $r$ is the first term and $d$ is the common difference. By Vieta's formulas, we have:
+\[
+a = -(r_1 + r_2 + r_3) = -3r - 3d
+\]
+\[
+b = r_1r_2 + r_2r_3 + r_3r_1 = 3r^2 + 6rd + 2d^2
+\]
+\[
+c = -r_1r_2r_3 = -r(r + d)(r + 2d)
+\]
+Substituting these expressions into the equation $2a^3 + 27c = 9ab$, we get:
+\begin{align} \label{eq:part_a}
+    -2(3r + 3d)^3 - 27r(r + d)(r + 2d) &= -9(3r^2 + 6dr + 2d^2)(3r + 3d), \\
+    -2 \cdot 27(r + d) ^3 - 27r(r + d)(r + 2d) &= -27(3r^2 + 6dr + 2d^2)(r + d), \\
+    2(r + d)^3 + r(r + d)(r + 2d) &= (3r^2 + 6dr + 2d^2)(r + d), \\
+    2(r + d)^2 + r(r + 2d) &= 3r^2 + 6dr + 2d^2, \\
+    2(r^2 + 2dr + d^2) + r^2 + 2dr &= 3r^2 + 6dr + 2d^2, \\
+    2r^2 + 4dr + 2d^2 + r^2 + 2dr &= 3r^2 + 6dr + 2d^2, \\
+    3r^2 + 6dr + 2d^2 &= 3r^2 + 6dr + 2d^2.
+\end{align}
+This is an identity, which means that the equation holds for all values of $r$ and $d$. Thus, we have shown that if the roots of the polynomial are in arithmetic progression, then $2a^3 + 27c = 9ab$.
+
+\subsection{(b)}
+Prove that if $2a^3 + 27c = 9ab,$ then the roots of
+\[x^3 + ax^2 + bx + c = 0\]
+form an arithmetic sequence.
+Assume that $2a^3 + 27c = 9ab$. We can express $c$ in terms of $a$ and $b$:
+\[c = \frac{9ab - 2a^3}{27}\]
+Using Vieta's formulas, we have:
+\[
+r_1 + r_2 + r_3 = -a
+\]
+\[
+r_1r_2 + r_2r_3 + r_3r_1 = b
+\]
+\[
+r_1r_2r_3 = -c
+\]
+Substituting the expression for $c$ into the third equation, we get:
+\[
+r_1r_2r_3 = -\frac{9ab - 2a^3}{27}
+\]
+Now, let us consider the general case for the roots $r_1, r_2, r_3$ of the cubic. By Vieta's formulas, we have:
+\[
+r_1 + r_2 + r_3 = -a, \quad r_1r_2 + r_2r_3 + r_3r_1 = b, \quad r_1r_2r_3 = -c.
+\]
+Given $2a^3 + 27c = 9ab$, substitute $c = \frac{9ab - 2a^3}{27}$ into the third Vieta equation:
+\[
+r_1r_2r_3 = -\frac{9ab - 2a^3}{27}.
+\]
+Now, consider the elementary symmetric sums $S_1 = r_1 + r_2 + r_3$, $S_2 = r_1r_2 + r_2r_3 + r_3r_1$, $S_3 = r_1r_2r_3$. The only way for the relation $2a^3 + 27c = 9ab$ to always hold is if the roots are in arithmetic progression (as shown in part \hyperref[eq:part_a]{(a)}). Therefore, the roots must be of the form $r, r+d, r+2d$ for some $r$ and $d$. Thus, the roots form an arithmetic sequence.
+
+\section{Conclusion}
+We have shown that if the roots of the polynomial $x^3 + ax^2 + bx + c = 0$ form an arithmetic sequence, then $2a^3 + 27c = 9ab$. Conversely, if $2a^3 + 27c = 9ab$, then the roots of the polynomial also form an arithmetic sequence. Thus, we have proven both parts of the problem.
+
+\end{document}

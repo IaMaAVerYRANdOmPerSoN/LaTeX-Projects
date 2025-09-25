@@ -1,0 +1,64 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+\title{Writing Problem for Week 17}
+\author{mxsail, \\ Art of Problem Solving}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\section*{Problem Statement}
+Find all real solutions for $x$ in
+\[ 2(2^x- 1) x^2 + (2^{x^2}-2)x = 2^{x+1} -2 . \]
+
+\section*{Solution}
+
+Let us define
+\[
+f(x) = 2(2^x-1)(x^2-1) + (2^{x^2-1}-1)x.
+\]
+We claim that the original equation is equivalent to $f(x) = 0$.
+
+\textbf{Step 1: Sign analysis.}
+
+Note that for any real $y$, $2^y-1$ and $y$ have the same sign (since $2^y-1 = 0$ if $y=0$, and $2^y-1 > 0$ if $y > 0$, $2^y-1 < 0$ iff $y < 0$). Thus,
+\[
+\operatorname{sgn}(2^x-1) = \operatorname{sgn}(x),
+\]
+\[
+\operatorname{sgn}(2^{x^2-1}-1) = \operatorname{sgn}(x^2-1).
+\]
+
+Therefore,
+\[
+\operatorname{sgn}\big(2(2^x-1)(x^2-1)\big) = \operatorname{sgn}(x)\operatorname{sgn}(x^2-1),
+\]
+\[
+\operatorname{sgn}\big((2^{x^2-1}-1)x\big) = \operatorname{sgn}(x^2-1)\operatorname{sgn}(x).
+\]
+
+So both terms have the same sign, and thus
+\[
+\operatorname{sgn}(f(x)) = \operatorname{sgn}(x)\operatorname{sgn}(x^2-1).
+\]
+
+But $\operatorname{sgn}(x^2-1) = \operatorname{sgn}(x-1)\operatorname{sgn}(x+1)$, so
+\[
+\operatorname{sgn}(f(x)) = \operatorname{sgn}(x)\operatorname{sgn}(x-1)\operatorname{sgn}(x+1).
+\]
+
+\textbf{Step 2: Zeros of $f(x)$.}
+
+The sign function is zero if and only if its argument is zero. Therefore, $f(x) = 0$ if and only if $x = 0$, $x = 1$, or $x = -1$.
+
+\textbf{Step 3: Conclusion.}
+
+Thus, the only real solutions to the original equation are
+\[
+\boxed{x = -1,\ 0,\ 1}
+\]
+
+\end{document}

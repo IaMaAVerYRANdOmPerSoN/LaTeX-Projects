@@ -1,0 +1,39 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+\title{Polynomial Composition}
+\author{Michael Xie \\ Art of Problem Solving \\ Week 8}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+In this article, we aim to prove that \textbf{there exist infinitely many positive integers $n$ such that a nonconstant polynomial $P(n)$ is composite.} We will do this by constructing a polynomial $P(x)$ and showing that it can be evaluated at infinitely many integers to yield composite numbers.
+
+\section{Defining the Polynomial}
+Let $P(x) = \sum_{k=0}^{m} a_kx^k$, where $a_k \geq 0$. This is a nonconstant polynomial with nonnegative integer coefficients. We will show that there are infinitely many positive integers $n$ such that $P(n)$ is composite.
+
+\section{Observing Limiting Behavior}
+Because $P(x)$ is a nonconstant polynomial with positive integer coefficients, the behavior of $P(n)$ as $n \to \infty$ tends to infinity. This means that for sufficiently large $n$, $P(n)$ will be a large positive integer. Thus, $P(n)$ cannot always be prime, as there are infinitely many integers $n$ but only finitely many primes less than any given bound.
+
+\section{Constructing Composite Values}
+In this section, we will prove that there are infinitely many positive integers $n$ such that $P(n)$ is composite.\\
+
+\begin{center}
+    \textbf{Using our definition for $P(N)$, we split into two cases.}
+\end{center} 
+
+\subsection{Case 1: $P(1)$ is Composite}
+If $P(1)$ is composite, then $n = 1$ is one such $n$. Since $P(x)$ is nonconstant, $P(n)$ will take on infinitely many values as $n \to \infty$, and we can find infinitely many $n$ such that $P(n)$ is composite.
+
+\subsection{Case 2: $P(1)$ is Prime}
+If $P(1)$ is prime, consider the sequence $P(kP(1))$ for $k = 1, 2, 3, \dots$. Since $P(x)$ is a polynomial with integer coefficients, $P(kP(1))$ is divisible by $P(1)$ for all $k$. Specifically:
+\[
+P(kP(1)) \equiv 0 \pmod{P(1)}.
+\]
+Thus, $P(kP(1))$ is composite for all $k \geq 2$, because it is divisible by $P(1)$ and greater than $P(1)$.\\
+
+\textbf{Therefore, we have constructed infinitely many positive integers $n$ such that $P(n)$ is composite.}
+
+\end{document}

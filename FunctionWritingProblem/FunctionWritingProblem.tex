@@ -1,0 +1,77 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage[a4paper,
+            bindingoffset=0.2in,
+            left=1in,
+            right=1in,
+            top=1in,
+            bottom=1in,
+            footskip=.25in]{geometry}
+
+\title{Function Analysis}
+\date{December 2024}
+\author{Michael Xie \\ Art of Problem Solving} 
+
+\begin{document}
+
+\maketitle
+
+\section*{Exploring the Differences Between Two Functions}
+
+In this article, we explore the differences between the following two functions:
+\[
+f(x) = \sqrt{\frac{x+5}{x-7}} \quad \text{and} \quad h(x) = \frac{\sqrt{x+5}}{\sqrt{x-7}}.
+\]
+
+At first glance, these functions may seem very similar. However, there are key differences in their domains and ranges, which we will analyze in detail. 
+
+\section*{Domain and Range Analysis}
+
+\subsection*{Domain of $f(x)$}
+The function $f(x) = \sqrt{\frac{x+5}{x-7}}$ is defined only when both of the following conditions hold:
+\begin{itemize}
+    \item The denominator $x - 7 \neq 0$ (to avoid division by zero).
+    \item The expression $\frac{x+5}{x-7} \geq 0$ (to ensure the square root is defined and real).
+\end{itemize}
+
+\subsection*{Step 1: Avoiding Division by Zero}
+The denominator $x - 7 \neq 0$ implies:
+\[
+x \neq 7.
+\]
+
+\subsection*{Step 2: Ensuring Non-Negativity}
+To ensure $\frac{x+5}{x-7} \geq 0$, we analyze the signs of the numerator $(x+5)$ and denominator $(x-7)$ over different intervals of $x$:
+\begin{itemize}
+    \item When $x + 5 \geq 0$ and $x - 7 > 0$, the fraction is non-negative. This occurs when $x \geq 7$.
+    \item When $x + 5 \leq 0$ and $x - 7 < 0$, the fraction is also non-negative. This occurs when $x \leq -5$.
+\end{itemize}
+
+Combining these conditions, the domain of $f(x)$ is:
+\[
+x \in (-\infty, -5] \cup [7, \infty).
+\]
+
+\subsection*{Step 3: Removing $x = 7$ (Division by Zero)}
+Finally, removing $x = 7$ from the domain:
+\[
+\text{Domain of } f(x): \quad x \in (-\infty, -5] \cup (7, \infty) \subset \mathbb{R}.
+\]
+
+\subsection*{Domain of $h(x)$}
+The function $h(x) = \frac{\sqrt{x+5}}{\sqrt{x-7}}$ imposes stricter constraints due to the square roots in both the numerator and denominator. It is defined only when:
+\begin{itemize}
+    \item The numerator $\sqrt{x+5}$ is defined, which requires $x + 5 \geq 0 \implies x \geq -5$.
+    \item The denominator $\sqrt{x-7}$ is defined and nonzero, which requires $x - 7 > 0 \implies x > 7$.
+\end{itemize}
+
+Combining these conditions, the domain of $h(x)$ is:
+\[
+\text{Domain of } h(x): \quad x \in (7, \infty) \subset \mathbb{R}.
+\]
+
+\section*{Comparison of Domains}
+The key difference between the domains of $f(x)$ and $h(x)$ lies in the inclusion of the interval $(-\infty, -5]$ for $f(x)$, which is not part of the domain of $h(x)$. This is because the two square roots in $h(x)$ impose stricter constraints, requiring both $x+5 \geq 0$ and $x-7 > 0$ simultaneously, compared to $f(x)$'s one, encompassing square root.
+
+\end{document}

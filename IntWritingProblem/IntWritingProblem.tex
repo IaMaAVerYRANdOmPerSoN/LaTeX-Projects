@@ -1,0 +1,87 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+\title{Function invertability}
+\author{Michael Xie, \\ AoPS Intermediate Algebra}        
+\begin{document}
+
+\maketitle
+
+\section{Introduction}
+In this article, we will discuss the invertibility of functions. A function $f : A \to B$ is said to have an inverse function if there exists a function $g : B \to A$ such that $f(g(x)) = x$ for all $x \in B$ and $g(f(x)) = x$ for all $x \in A$.
+
+\section{Show that the Function $f(x) = x-\frac{1}{x}$ is not invertible}
+
+Let $f : (-\infty,0) \cup (0,\infty) \to \mathbb{R}$ be defined by
+\[ f(x) = x - \frac{1}{x}. \]
+Show that $f$ has no inverse function.
+
+\subsection*{Solution:}
+
+To show that $f$ has no inverse function, we need to show that $f$ is not one-to-one. This means that there exist distinct $x_1$ and $x_2$ such that $f(x_1) = f(x_2)$.
+
+Consider $f(x_1) = x_1 - \frac{1}{x_1}$ and $f(x_2) = x_2 - \frac{1}{x_2}$. Suppose $f(x_1) = f(x_2)$, then:
+\[ x_1 - \frac{1}{x_1} = x_2 - \frac{1}{x_2}. \]
+
+Rearranging terms, we get:
+\[ x_1 - x_2 = \frac{1}{x_1} - \frac{1}{x_2}. \]
+
+Multiplying both sides by $x_1 x_2$, we obtain:
+\[ x_1 x_2 (x_1 - x_2) = x_2 - x_1. \]
+
+This simplifies to:
+\[ x_1 x_2 (x_1 - x_2) = -(x_1 - x_2). \]
+
+If $x_1 \neq x_2$, we can divide both sides by $(x_1 - x_2)$:
+\[ x_1 x_2 = -1. \]
+
+Thus, for any $x_1 \in (-\infty,0) \cup (0,\infty)$, there exists $x_2 = -\frac{1}{x_1}$ such that $f(x_1) = f(x_2)$. Since $x_1 \neq x_2$, $f$ is not one-to-one and therefore does not have an inverse function.
+
+\section{Show that the Function $g(x) = x-\frac{1}{x} : (0, \infty)$ is invertible}
+
+Let $g : (0,\infty) \to \mathbb{R}$ be defined by
+\[ g(x) = x - \frac{1}{x}. \]
+Show that $g$ has an inverse function.
+
+\subsubsection*{Solution:}
+
+To show that $g$ has an inverse function, we need to show that $g$ is one-to-one and onto.
+
+First, we show that $g$ is one-to-one. Suppose $g(x_1) = g(x_2)$ for $x_1, x_2 \in (0, \infty)$. Then:
+\[ x_1 - \frac{1}{x_1} = x_2 - \frac{1}{x_2}. \]
+
+Rearranging terms, we get:
+\[ x_1 - x_2 = \frac{1}{x_1} - \frac{1}{x_2}. \]
+
+Multiplying both sides by $x_1 x_2$, we obtain:
+\[ x_1 x_2 (x_1 - x_2) = x_2 - x_1. \]
+
+This simplifies to:
+\[ x_1 x_2 (x_1 - x_2) = -(x_1 - x_2). \]
+
+If $x_1 \neq x_2$, we can divide both sides by $(x_1 - x_2)$:
+\[ x_1 x_2 = -1, \]
+
+which is a contradiction since $x_1, x_2 > 0$. Therefore, $x_1 = x_2$, and $g$ is one-to-one.
+
+Next, we show that $g$ is onto. For any $y \in \mathbb{R}$, we need to find $x \in (0, \infty)$ such that $g(x) = y$. Consider the equation:
+\[ y = x - \frac{1}{x}. \]
+
+Rearranging terms, we get:
+\[ x^2 - yx - 1 = 0. \]
+
+This is a quadratic equation in $x$, and its discriminant is:
+\[ \Delta = y^2 + 4. \]
+
+Since $\Delta > 0$ for all $y \in \mathbb{R}$, there are two real solutions for $x$:
+\[ x = \frac{y \pm \sqrt{y^2 + 4}}{2}. \]
+
+Since we are considering $x \in (0, \infty)$, we take the positive solution:
+\[ x = \frac{y + \sqrt{y^2 + 4}}{2}. \]
+
+Thus, for any $y \in \mathbb{R}$, there exists $x \in (0, \infty)$ such that $g(x) = y$. Therefore, $g$ is onto.
+
+Since $g$ is both one-to-one and onto, it has an inverse function.
+
+\end{document}

@@ -1,0 +1,125 @@
+\documentclass{article}
+
+\usepackage{float}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{graphicx}
+\usepackage{csquotes}
+
+\title{ \vspace{-2.0cm} Basic Graph Transformations} 
+\author{Michael Xie \\ Art of Problem Solving}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\section{Introduction}
+In this article, we will perform and describe some basic graph transformations. We are given a function defined by its graph and asked to plot a transformed version of the given graph. Furthermore, we will explore why these transformations cause the graph to shift as they do.
+
+\subsection{The Problem}
+
+The graph of $y = f(x)$ is shown in the figure below.
+
+\begin{figure}[H]
+    \includegraphics[width = \linewidth]{Figure_1.png}
+    \caption{Graph of $y = f(x)$}
+    \label{fig:Figure_1}
+\end{figure}
+
+For each point $(a,b)$ that is on the graph of $y = f(x),$ the point $(2a +1, 3b)$ is plotted, forming the graph of another function $y = g(x).$ As an example, the point $(0,2)$ lies on the graph of $y = f(x),$ so the point $(2 \cdot 0 + 1, 3 \cdot 2) = (1, 6)$ lies on the graph of $y = g(x).$
+
+\begin{itemize}
+    \item[(a)] Plot the graph of $y = g(x).$ Include the diagram as part of your solution.
+    \item[(b)] Express $g(x)$ in terms of $f(x).$ 
+    \item[(c)] Describe the transformations that can be applied to the graph of $y = f(x)$ to obtain the graph of $y = g(x).$ For example, one transformation could be to stretch the graph vertically by a factor of 3. 
+\end{itemize}
+
+\section{Solution}
+
+\subsection{Part (a)}
+Let's start by plotting the graph, $y = g(x)$. As these are all linear transformations, there is no need to generate or find additional points for a larger sample size. We can use the integer points given:
+
+\begin{figure}[H]
+    \includegraphics[width = \linewidth]{Figure_2.png}
+    \caption{Graph of $y = g(x)$ vs $y = f(x)$}
+    \label{fig:Figure_2}
+\end{figure}
+
+As the domain of $f(x)$ is $[-4,4]$, the graph of $g(x)$ is subject to the same domain. This is shown by the red rectangle.
+
+\subsection{Part (b)}
+Let us define $g(x)$ in terms of $f(x)$:
+
+\begin{center}
+    Any point on the graph of $g(x)$ satisfies the following:
+    \[
+    (a,b) = (2x+1, 3f(x))
+    \]
+    Therefore, 
+    \[
+    g(2x+1) = 3f(x)
+    \]
+    Let $\phi = 2x+1$, so 
+    \[
+    g(\phi) = 3f(x)
+    \]
+    Now, express $x$ in terms of $\phi$:
+    \[
+    \phi = 2x+1
+    \]
+    \[
+    \phi - 1 = 2x
+    \]
+    \[
+    x = \frac{\phi - 1}{2}
+    \]
+    Substituting this back into the original equation:
+    \[
+    g(\phi) = 3f\left(\frac{\phi}{2} - \frac{1}{2}\right)
+    \]
+    Replacing $\phi$ with $x$, we get:
+    \[
+    g(x) = 3f\left(\frac{x}{2} - \frac{1}{2}\right)
+    \]
+    Thus, we have arrived at our solution.
+\end{center}
+
+\subsection{Part (c)}
+Starting from the inside out, let's examine the effect of the transformation $ y = f\left(\frac{x}{2} - \frac{1}{2}\right)$.
+
+\begin{figure}[H]
+    \includegraphics[width = \linewidth]{Figure_3.png}
+    \caption{Graph of $y = f\left(\frac{x}{2} - \frac{1}{2}\right)$ vs $y = f(x)$}
+    \label{fig:Figure_3}
+\end{figure}
+
+It appears that the graph is horizontally compressed by a factor of 2, followed by a translation by the vector $(-\frac{1}{2}, 0)$. Now, if we plot only $y = f\left(\frac{x}{2}\right)$:
+
+\begin{figure}[H]
+    \includegraphics[width = \linewidth]{Figure_4.png}
+    \caption{Graph of $y = f\left(\frac{x}{2}\right)$ vs $y = f(x)$}
+    \label{fig:Figure_4}
+\end{figure}
+
+We see that the graph has only been compressed horizontally. Thus, scaling the input is inversely proportional to the horizontal stretch, and adding a constant translates the graph by a vector of $(c,0)$, where $c$ is the constant.
+
+\vspace{3mm} Multiplying by three is fairly straghtforward. it stretches the graph vertically by a factor of 3. More precisely, it triples the function’s derivative.
+
+\begin{center}
+    Let $\phi = \frac{x}{2} - \frac{1}{2}$, and differentiate:
+    \[
+    \frac{d}{dx}\left[3f(\phi)\right] = 3 \frac{d}{dx}\left[f(\phi)\right] = 3 f'(\phi)
+    \]
+\end{center}
+
+Therefore, the final transformation consists of a horizontal compression by a factor of 2, a leftward translation by $\frac{1}{2}$, and a vertical stretch by a factor of 3, leaving us with figure 5 below.
+
+\begin{figure}[H]
+    \includegraphics[width = \linewidth]{Figure_5.png}
+    \caption{Graph of $y = f\left(\frac{x}{2}\right)$ vs $y = f(x)$}
+    \label{fig:Figure_5}
+\end{figure}
+
+\end{document}

@@ -1,0 +1,112 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{enumitem}
+
+\title{Week 19 Writing Problem}
+\author{mxsail}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\section*{Problem Statement}
+
+Let
+\[
+f(x) = \left\lfloor x \left\lfloor x \right\rfloor \right\rfloor \quad \text{for } x \ge 0.
+\]
+
+\begin{enumerate}[label=(\alph*)]
+    \item Find all $x \ge 0$ such that $f(x) = 1$.
+    \item Find all $x \ge 0$ such that $f(x) = 3$.
+    \item Find all $x \ge 0$ such that $f(x) = 5$.
+    \item Find the number of possible values of $f(x)$ for $0 \le x \le 10$.
+\end{enumerate}
+
+\section*{Solution}
+
+Let $n = \lfloor x \rfloor$, so $n \le x < n+1$ and $n$ is a nonnegative integer. Then
+\[
+f(x) = \left\lfloor x \left\lfloor x \right\rfloor \right\rfloor = \lfloor x n \rfloor.
+\]
+
+\subsection*{(a) $f(x) = 1$}
+
+We want $\lfloor x n \rfloor = 1$.
+
+\begin{align*}
+&\text{If } n = 0: && x n = 0 \implies f(x) = 0. \\
+&\text{If } n = 1: && x \in [1,2),\ x n = x \in [1,2) \implies \lfloor x n \rfloor = 1. \\
+&\text{If } n \ge 2: && x n \ge 2n > 1.
+\end{align*}
+
+Thus, the solution is
+\[
+\boxed{x \in [1,2)}
+\]
+
+\subsection*{(b) $f(x) = 3$}
+
+We want $\lfloor x n \rfloor = 3$.
+
+\begin{align*}
+&\text{If } n = 0: && x n = 0. \\
+&\text{If } n = 1: && x \in [1,2),\ x n \in [1,2) \implies \lfloor x n \rfloor = 1. \\
+&\text{If } n = 2: && x \in [2,3),\ x n \in [4,6) \implies \lfloor x n \rfloor \ge 4. \\
+&\text{If } n = 3: && x \in [3,4),\ x n \in [9,12) \implies \lfloor x n \rfloor \ge 9.
+\end{align*}
+
+There is no $x \ge 0$ such that $f(x) = 3$.
+
+\[
+\boxed{\text{No solution}}
+\]
+
+\subsection*{(c) $f(x) = 5$}
+
+Try $n = 2$:
+\[
+x \in [2,3),\ x n \in [4,6)
+\]
+We want $x n \in [5,6)$, so $x \in [2.5,3)$.
+
+Thus,
+\[
+\boxed{x \in [2.5,3)}
+\]
+
+\subsection*{(d) Number of possible values of $f(x)$ for $0 \le x \le 10$}
+
+For each integer $n$ from $0$ to $10$:
+\begin{align*}
+n = 0: &\quad x \in [0,1),\ f(x) = 0 \\
+n = 1: &\quad x \in [1,2),\ f(x) = 1 \\
+n = 2: &\quad x \in [2,3),\ f(x) = 4,5 \\
+n = 3: &\quad x \in [3,4),\ f(x) = 9,10,11 \\
+n = 4: &\quad x \in [4,5),\ f(x) = 16,17,18,19 \\
+n = 5: &\quad x \in [5,6),\ f(x) = 25,26,27,28,29 \\
+n = 6: &\quad x \in [6,7),\ f(x) = 36,37,38,39,40,41 \\
+n = 7: &\quad x \in [7,8),\ f(x) = 49,50,51,52,53,54,55 \\
+n = 8: &\quad x \in [8,9),\ f(x) = 64,65,66,67,68,69,70,71 \\
+n = 9: &\quad x \in [9,10],\ f(x) = 81,82,83,84,85,86,87,88,89 \\
+n = 10: &\quad x = 10,\ f(10) = 100
+\end{align*}
+
+Listing all values:
+\[
+\begin{aligned}
+&0,\,1,\,4,\,5,\,9,\,10,\,11,\,16,\,17,\,18,\,19,\,25,\,26,\,27,\,28,\,29,\,36,\,37,\,38,\,39,\,40,\,41,\\
+&49,\,50,\,51,\,52,\,53,\,54,\,55,\,64,\,65,\,66,\,67,\,68,\,69,\,70,\,71,\,81,\,82,\,83,\,84,\,85,\,86,\\
+&87,\,88,\,89,\,100
+\end{aligned}
+\]
+
+Counting, we get $47$ values.
+
+\[
+\boxed{47}
+\]
+
+\end{document}

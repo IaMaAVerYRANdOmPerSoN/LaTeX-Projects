@@ -1,0 +1,60 @@
+\documentclass[12pt]{article}
+\usepackage{amsmath, amssymb, graphicx}
+
+\begin{document}
+
+\section*{Problem}
+Let $k$ be a positive real number. The square with vertices $(k,0),$ $(0,k),$ $(-k,0),$ and $(0,-k)$ is plotted in the coordinate plane. It is possible to draw an ellipse so that it is tangent to all sides of the square. The ellipse is given by the equation:
+\[
+\frac{x^2}{a^2} + \frac{y^2}{b^2} = 1,
+\]
+where $a > 0$ and $b > 0$. 
+
+Find necessary and sufficient conditions on $a$ and $b$ such that the ellipse is tangent to all sides of the square. Prove that your conditions are both necessary and sufficient.
+
+\section*{Solution}
+
+\subsection*{Step 1: Tangency Condition}
+For the ellipse to be tangent to the sides of the square, the distance from the center of the ellipse (at $(0,0)$) to each side of the square must equal the semi-major or semi-minor axis of the ellipse, depending on the orientation.
+
+The square has sides:
+\[
+x = \pm k \quad \text{and} \quad y = \pm k.
+\]
+
+The ellipse is tangent to the vertical lines $x = \pm k$ if:
+\[
+\frac{k^2}{a^2} + \frac{0^2}{b^2} = 1 \implies a = k.
+\]
+
+Similarly, the ellipse is tangent to the horizontal lines $y = \pm k$ if:
+\[
+\frac{0^2}{a^2} + \frac{k^2}{b^2} = 1 \implies b = k.
+\]
+
+\subsection*{Step 2: Necessary and Sufficient Conditions}
+The necessary and sufficient conditions for the ellipse to be tangent to all sides of the square are:
+\[
+a = b = k.
+\]
+
+\subsection*{Proof of Necessity}
+Assume the ellipse is tangent to all sides of the square. Then, the tangency condition implies that the distance from the center of the ellipse to each side of the square equals the corresponding semi-axis length. This leads to:
+\[
+a = k \quad \text{and} \quad b = k.
+\]
+
+\subsection*{Proof of Sufficiency}
+Assume $a = b = k$. Substituting into the ellipse equation:
+\[
+\frac{x^2}{k^2} + \frac{y^2}{k^2} = 1.
+\]
+This ellipse is symmetric about the origin and has semi-axes of length $k$. It is straightforward to verify that this ellipse is tangent to the lines $x = \pm k$ and $y = \pm k$.
+
+\section*{Conclusion}
+The necessary and sufficient conditions for the ellipse to be tangent to all sides of the square are:
+\[
+a = b = k.
+\]
+
+\end{document}

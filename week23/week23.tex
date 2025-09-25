@@ -1,0 +1,94 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+\title{Example of a Functional Equation}
+\author{mxsail}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+\section*{Problem Statement}
+The function $f : \mathbb{R} \to \mathbb{R}$ satisfies
+\[f(x) f(y) = f(x + y) + xy\]for all real numbers $x$ and $y.$ Find all possible functions $f.$
+
+\section*{Solution}
+
+Let $P(x, y)$ denote the given assertion:
+\[
+f(x)f(y) = f(x+y) + xy
+\]
+
+\textbf{Step 1: Find $f(0)$.}
+
+Let $y = 0$ in $P(x, 0)$:
+\[
+f(x)f(0) = f(x) + 0 \implies f(x)f(0) = f(x)
+\]
+If $f(0) = 0$, then $f(x) = 0$ for all $x$, but plugging this into the original equation gives $0 = 0 + xy$, which is not true for all $x, y$. Thus, $f(0) \neq 0$, and we can divide both sides by $f(0)$ to get $f(0) = 1$.
+
+\textbf{Step 2: Find $f(-x)$.}
+
+Let $y = -x$ in $P(x, -x)$:
+\[
+f(x)f(-x) = f(0) + x(-x) = 1 - x^2
+\]
+
+\textbf{Step 3: Try linear solutions.}
+
+Suppose $f(x) = ax + b$. Plug into the original equation:
+\[
+(ax + b)(ay + b) = a(x+y) + b + xy
+\]
+\[
+a^2xy + abx + aby + b^2 = a(x+y) + b + xy
+\]
+Comparing coefficients:
+\begin{itemize}
+    \item $xy$: $a^2 = 1 \implies a = 1$ or $a = -1$
+    \item $x$: $ab = a \implies b = 1$ (if $a \neq 0$)
+    \item Constant: $b^2 = b \implies b = 0$ or $b = 1$
+\end{itemize}
+So the only possible linear solutions are $f(x) = x + 1$ and $f(x) = -x + 1$.
+
+Check $f(x) = x + 1$:
+\[
+(x+1)(y+1) = (x+y+1) + xy \implies xy + x + y + 1 = x + y + 1 + xy
+\]
+True.
+
+Check $f(x) = -x + 1$:
+\[
+(-x+1)(-y+1) = (-(x+y)+1) + xy
+\]
+\[
+(xy - x - y + 1) = (-x - y + 1) + xy
+\]
+True.
+
+\textbf{Step 4: Check for other solutions.}
+
+Suppose $f$ is not linear. Try $f(x) = c$ (constant):
+\[
+c^2 = c + xy
+\]
+This cannot hold for all $x, y$.
+
+Try quadratic: $f(x) = px^2 + qx + r$. Plug into the original equation:
+\[
+(px^2 + qx + r)(py^2 + qy + r) = p(x+y)^2 + q(x+y) + r + xy
+\]
+The left side contains a $p^2x^2y^2$ term (degree 4), but the right side's highest degree is $xy$ (degree 2). For the equation to hold for all $x, y$, the coefficients of $x^2y^2$ and all higher-degree terms must be zero, so $p = 0$. Thus, $f$ cannot be quadratic or of higher degree.
+
+This argument generalizes: if $f$ is a polynomial of degree $n > 1$, the left side will have degree $2n$ terms, but the right side will have degree at most $n$. Thus, all higher-degree coefficients must be zero, forcing $f$ to be linear.
+
+\textbf{Conclusion:}
+
+\[
+\boxed{
+f(x) = x + 1 \quad \text{or} \quad f(x) = -x + 1
+}
+\]
+
+\end{document}

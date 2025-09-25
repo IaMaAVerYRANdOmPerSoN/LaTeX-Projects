@@ -1,0 +1,78 @@
+\documentclass{article}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+
+\title{Week 14 Writing Problem}
+\author{Michael Xie, \\
+        Art of Problem Solving, \\
+        Intermediate Algebra}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\section*{Problem}
+The sequence $(a_n)$ is defined by $a_1 = \frac{1}{2}$ and
+\[
+  a_n = a_{n - 1}^2 + a_{n - 1}
+\]
+for all $n \ge 2.$
+
+Prove that
+\[
+  \frac{1}{a_1 + 1} + \frac{1}{a_2 + 1} + \dots + \frac{1}{a_k + 1} < 2
+\]
+for all $k \ge 1.$
+
+\section*{Solution}
+Observe first that
+\[
+  a_{n+1} \;=\; a_n^2 + a_n
+  \quad\Longrightarrow\quad
+  a_{n+1}-a_n = a_n^2,
+\]
+so
+\[
+  \frac1{a_n}-\frac1{a_{n+1}}
+  \;=\;
+  \frac{a_{n+1}-a_n}{a_n\,a_{n+1}}
+  \;=\;
+  \frac{a_n^2}{a_n\,a_{n+1}}
+  \;=\;
+  \frac1{a_{n+1}}
+  \;=\;
+  \frac1{a_n+1}.
+\]
+Hence for each $n\ge1$,
+\[
+  \frac1{a_n+1}
+  \;=\;
+  \frac1{a_n}-\frac1{a_{n+1}},
+\]
+and the sum telescopes:
+\[
+  \sum_{n=1}^k \frac1{a_n+1}
+  \;=\;
+  \Bigl(\tfrac1{a_1}-\tfrac1{a_2}\Bigr)
+  +\Bigl(\tfrac1{a_2}-\tfrac1{a_3}\Bigr)
+  +\cdots+
+  \Bigl(\tfrac1{a_k}-\tfrac1{a_{k+1}}\Bigr)
+  \;=\;
+  \frac1{a_1}-\frac1{a_{k+1}}.
+\]
+Since $a_1=\tfrac12$, this becomes
+\[
+  \sum_{n=1}^k \frac1{a_n+1}
+  \;=\;
+  2 \,-\, \frac1{a_{k+1}}
+  \;<\;
+  2,
+\]
+as claimed.
+
+\section*{Conclusion}
+The sequence $(a_n)$ is defined recursively, and we have shown that the sum of the series converges to a value less than 2. This demonstrates the power of telescoping series in simplifying complex recursive definitions.
+\end{document}
