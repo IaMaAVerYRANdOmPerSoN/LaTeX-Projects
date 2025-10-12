@@ -1,0 +1,64 @@
+\documentclass{article}
+\usepackage{amsmath}
+
+\title{Week 2 Writing Problem}
+\author{Mxsail,\\
+The Art of Problem Solving,\\
+Intermediate Counting and Probability}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+\section*{Problem Statement}
+A standard $8 \times 8$ chessboard has $64$ unit squares.
+
+Eight rooks are randomly placed on different squares of a chessboard. A rook is said to attack all of the squares in its row and its column.
+
+Compute the probability that every square is occupied or attacked by at least one rook. You may express your answer in terms of binomial coefficients.
+
+\section*{Solution}
+
+We can consider the problem in terms of rows (ranks) and columns (files). There are two main cases to consider:
+
+\begin{enumerate}
+    \item All rooks are on different ranks.
+    \item All rooks are on different files.
+\end{enumerate}
+
+\subsection*{Case 1: Rooks on Different Ranks}
+For the first rank, there are $8$ possible positions for the rook.  
+For the second rank, there are $8$ possible positions, and so on for all $8$ ranks.  
+
+Thus, the total number of valid placements with all rooks on different ranks is
+\[
+8^8.
+\]
+
+\subsection*{Case 2: Rooks on Different Files}
+By symmetry, the same argument applies to columns (files). There are also
+\[
+8^8
+\]
+valid placements with all rooks on different files.
+
+\subsection*{Accounting for Overlap}
+Some arrangements are counted in both cases — specifically, the arrangements where all rooks are on distinct ranks \emph{and} distinct files. These correspond exactly to permutations of the $8$ rows and $8$ columns, giving $8!$ overcounted arrangements.
+
+\subsection*{Probability}
+The total number of valid placements is therefore
+\[
+2 \cdot 8^8 - 8!.
+\]
+
+The total number of ways to place $8$ rooks on the board is
+\[
+\binom{64}{8}.
+\]
+
+Hence, the probability that every square is occupied or attacked is
+\[
+\frac{2 \cdot 8^8 - 8!}{\binom{64}{8}} \approx 0.00759.
+\]
+
+\end{document}
