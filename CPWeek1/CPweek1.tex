@@ -1,0 +1,65 @@
+\documentclass{article}
+\usepackage{amsmath}
+
+\title{Week two Writing Problem}
+\author{Mxsail}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+\section*{Problem Statement}
+Let $n$ be a positive integer, and let $S = \{1, 2, 3, \dots, n\}.$ Three subsets $A,$ $B,$ $C$ of $S$ are chosen at random.
+
+(a) Find the probability that $A \cup B \cup C = S.$
+
+(b) Find the probability that $A \subseteq B \subseteq C.$
+
+\section*{Solution}
+
+\textbf{(a)}  
+Each of the three subsets \( A, B, C \) is chosen independently and uniformly at random from the power set of \( S = \{1, 2, 3, \dots, n\} \).  
+For each element \( x \in S \), the probability that \( x \) is \emph{not} contained in any of \( A, B, \) or \( C \) is
+\[
+\left(\frac{1}{2}\right)^3 = \frac{1}{8}.
+\]
+Thus, the probability that \( x \) is contained in at least one of the sets is
+\[
+1 - \frac{1}{8} = \frac{7}{8}.
+\]
+Since the inclusion of distinct elements is independent, we have
+\[
+\Pr(A \cup B \cup C = S) = \left(\frac{7}{8}\right)^n.
+\]
+
+\bigskip
+
+\textbf{(b)}  
+For a fixed element \( x \in S \), the condition \( A \subseteq B \subseteq C \) means that the membership indicator
+\[
+(\mathbf{1}_{x \in A}, \mathbf{1}_{x \in B}, \mathbf{1}_{x \in C})
+\]
+must be nondecreasing. The allowed membership patterns are:
+\[
+(0,0,0), \quad (0,0,1), \quad (0,1,1), \quad (1,1,1).
+\]
+There are \( 4 \) such patterns out of \( 2^3 = 8 \) total possibilities, so the probability for a single element is
+\[
+\frac{4}{8} = \frac{1}{2}.
+\]
+By independence over all \( n \) elements, we have
+\[
+\Pr(A \subseteq B \subseteq C) = \left(\frac{1}{2}\right)^n.
+\]
+
+\bigskip
+
+\textbf{Final Answers:}
+\[
+\boxed{\Pr(A \cup B \cup C = S) = \left(\frac{7}{8}\right)^n}
+\qquad \text{and} \qquad
+\boxed{\Pr(A \subseteq B \subseteq C) = \left(\frac{1}{2}\right)^n.}
+\]
+
+\end{document}
+

@@ -1,0 +1,55 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{enumitem}
+
+\title{Counting and Probability Week 6 Writing Problem}
+\author{mxsail \\ Art of Problem Solving \\ Intermediate Counting and Probability}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+\section*{Problem Statement}
+\begin{enumerate}[label=(\alph*)]
+    \item Prove that given any set of $5$ integers, there exist three of them whose sum is divisible by $3.$
+    \item Prove that given any set of $17$ integers, there exist nine of them whose sum is divisible by $9.$
+\end{enumerate}
+
+\section*{Solution}
+
+\subsection*{(a)}
+Let the set of $5$ integers be 
+\[
+S = \{a_1, a_2, a_3, a_4, a_5\}.
+\]
+Consider their residues modulo $3$.  
+Each integer has residue $0$, $1$, or $2$ (mod $3$).  
+
+If any residue occurs at least $3$ times, then choosing those three integers gives a sum congruent to $0 \pmod{3}$, and we are done.
+
+Otherwise, no residue appears more than twice. Since there are $5$ integers and $3$ residue classes, the only possible distribution of counts is $(2,2,1)$ in some order.  
+In this case, all three residue classes are represented, so we can pick one integer of each residue. Their sum is
+\[
+0 + 1 + 2 \equiv 0 \pmod{3}.
+\]
+Hence, in every possible case, we can find three integers whose sum is divisible by $3$.
+
+\[
+\boxed{\text{Therefore, among any five integers, there exist three whose sum is divisible by } 3.}
+\]
+
+\subsection*{(b)}
+This is a special case of a well-known result in additive combinatorics called the \textbf{Erd\H{o}s--Ginzburg--Ziv theorem}.
+
+\medskip
+\noindent\textbf{Theorem (Erd\H{o}s--Ginzburg--Ziv).}  
+For any positive integer $n$, given any $2n - 1$ integers, there exists a subset of $n$ of them whose sum is divisible by $n$.
+
+\medskip
+Applying this theorem with $n = 9$, we find that among any $17$ integers, there exist $9$ whose sum is divisible by $9$.
+
+\[
+\boxed{\text{Therefore, among any 17 integers, there exist nine whose sum is divisible by } 9.}
+\]
+
+\end{document}

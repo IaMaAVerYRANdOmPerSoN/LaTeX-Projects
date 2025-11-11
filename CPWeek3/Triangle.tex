@@ -1,0 +1,39 @@
+\documentclass{article}
+\usepackage{amsmath,amssymb}
+\usepackage{physics}
+\usepackage{hyperref}
+
+\title{Probability that at least one triangle appears among five random segments}
+\author{}
+\date{}
+\begin{document}
+\maketitle
+
+\section*{Problem}
+Twelve points are given in the plane, with no three on a line. Five distinct segments joining pairs of these points are chosen at random (all $\binom{12}{2}=66$ segments equally likely). Find the probability that the chosen segments contain the three edges of at least one triangle whose vertices are among the twelve points.
+
+\section*{Solution}
+Let the total number of ways to choose five segments be 
+$N_{\text{total}}=\binom{66}{5}$.
+
+We count the number of 5-edge sets that contain at least one triangle; denote this by $N_{\ge1}$. We use inclusion--exclusion:
+
+\begin{itemize}
+\item First, count 5-edge sets that contain a fixed triangle. There are $\binom{12}{3}$ choices for the triangle (three vertices), and for each such triangle we must choose the remaining $2$ edges from the other $66-3=63$ edges. So the first-term contribution is
+$\binom{12}{3}\binom{63}{2}$.
+
+\item Next we subtract those 5-edge sets that were counted twice because they contain two (distinct) triangles. Observe that two distinct triangles cannot both be subgraphs of a 5-edge set unless they share exactly one edge. (If they were disjoint or shared only a vertex their union would require at least $6$ edges.) Two triangles sharing an edge live on exactly $4$ vertices and together use exactly $5$ distinct edges. Thus every such pair of triangles corresponds to a unique 5-edge set: the union of the two triangles.
+
+How many such unions (``bow-ties'') are there? Choose any set of $4$ vertices out of $12$: $\binom{12}{4}$ choices. On those $4$ vertices there are $\binom{4}{2}=6$ choices for which edge is the common edge of the two triangles. Hence the number of 5-edge sets that contain two triangles (i.e. that were double-counted) is
+$6\binom{12}{4}$.
+\end{itemize}
+
+Therefore
+$N_{\ge1}=\binom{12}{3}\binom{63}{2}-6\binom{12}{4}$.
+
+The desired probability is
+$P=\frac{N_{\ge1}}{\binom{66}{5}}=\frac{\binom{12}{3}\binom{63}{2}-6\binom{12}{4}}{\binom{66}{5}}$.
+
+We can simplify this to a reduced rational and a decimal approximation:
+$P=\frac{2155}{45136}\approx0.0477446\approx4.774\%$.
+\end{document}
