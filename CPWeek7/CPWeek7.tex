@@ -1,0 +1,37 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+\title{Week 7 Writing Problem}
+\author{mxsail,\\ % to align with mxsails AoPS username
+The Art of Problem Solving,\\
+Intermediate Counting and Probability}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+\section*{Problem Statement}
+From the set \( \{1, 2, 3, \dots, 20\}, \) ten distinct numbers are chosen at random, forming a subset. Let $M$ be the largest element among the ten numbers.
+Find the expected value of $M,$ and simplify your answer as much as possible.
+
+\section*{Solution}
+
+\[
+\Pr(M=m)=\frac{\binom{m-1}{9}}{\binom{20}{10}}\qquad(m=10,\do ts,20),
+\]
+and hence
+\[
+\mathbb{E}[M]=\sum_{m=10}^{20}m\Pr(M=m)=\sum_{j=1}^{20}\Pr(M\ge j)
+= \sum_{j=1}^{20}\Bigg(1-\frac{\binom{j-1}{10}}{\binom{20}{10}}\Bigg).
+\]
+Using the hockey-stick identity,
+\[
+\sum_{j=1}^{20}\binom{j-1}{10}=\sum_{k=0}^{19}\binom{k}{10}=\binom{20}{11},
+\]
+so
+\[
+\mathbb{E}[M]=20-\frac{\binom{20}{11}}{\binom{20}{10}}=20-\frac{10}{11}=\frac{210}{11}.
+\]
+
+\end{document}
