@@ -1,0 +1,38 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+\title{Counting and Probablilty Week 4 Writing Problem}
+\author{mxsail} % Non-capitialized name to align with mxsail's AoPS username
+\date{\today}
+
+\begin{document}
+\maketitle
+
+\section*{Problem Statement}
+Consider a house with a finite number of rooms.
+Prove that if every room has an even number of doors,
+then the number of doors from the house to the outside world is also even.
+
+\section*{Solution}
+Let the house have \( n \) rooms, and let \( d_i \) be the number of doors in room \( i \) for \( i = 1, 2, \ldots, n \).
+By the problem statement, we know that each \( d_i \) is even.
+Becuase \( d_i \) is even, we know that \( \underset{j=1}{\overset{n}{\sum}} d_j \)
+is also even, since the sum of even numbers is even.
+
+We group the doors into two categories:
+\begin{itemize}
+    \item Doors that connect two rooms within the house.
+    \item Doors that connect a room to the outside world.
+\end{itemize}
+
+By the problem statement, each door that connects two rooms is counted twice in the sum \( \underset{j=1}{\overset{n}{\sum}} d_j \),
+once for each room it connects.
+Let \( D \) be the number of doors that connect rooms to the outside world.
+Then we can express the total sum of doors as:
+\[\underset{j=1}{\overset{n}{\sum}} d_j = 2 \cdot (\text{number of internal doors}) + D\]
+Because any number multiplied by 2 is even, \( 2 \cdot (\text{number of internal doors}) \) is even.
+As the whole sum \( \underset{j=1}{\overset{n}{\sum}} d_j \) is even, it follows that \( D \) must also be even.
+Thus, we have proven that if every room in the house has an even number of doors,
+then the number of doors from the house to the outside world is also even.
+\end{document}
