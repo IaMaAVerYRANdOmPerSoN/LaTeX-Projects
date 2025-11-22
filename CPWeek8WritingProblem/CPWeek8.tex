@@ -1,0 +1,45 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+\title{Counting and Probability Week 8 Writing Problem}
+\author{mxsail,\\ % lowercase m to align with mxsail's AoPS username
+Art of Problem Solving,\\
+Itermediate Counting and Probability}
+
+\begin{document}
+\maketitle
+
+\section*{Problem Statement}
+(a) There are \(n\) chairs in a row. Find the number of ways of choosing \(k\) of these chairs, so that no two chosen chairs are adjacent.
+(b) There are \(10\) chairs in a circle, labelled from \(1\) to \(10.\) Find the number of ways of choosing \(3\) of these chairs, so that no two chosen chairs are adjacent.
+(c) There are \(n\) chairs in a circle, labelled from \(1\) to \(n.\) Find the number of ways of choosing \(k\) of these chairs, so that no two chosen chairs are adjacent.
+
+\section*{solution}
+\textbf{(a)}
+To choose \(k\) chairs from \(n\) chairs in a row such that no two chosen chairs are adjacent, we can use a combinatorial approach.
+We start by placing \(n-k\) "unchosen" chairs. This creates \(n-k+1\) gaps (including the ends) where we can place the \(k\) "chosen" chairs.
+We need to select \(k\) gaps from these \(n-k+1\) gaps to place our chosen chairs. The number of ways to do this is given by the binomial coefficient:
+\[\binom{n-k+1}{k}.\]
+
+\textbf{(b)}
+To choose \(3\) chairs from \(10\) chairs in a circle such that no two chosen chairs are adjacent,
+we use a similar approach as in part (a), but we need to account for the circular arrangement.
+To account of the circular arrangement, we can "break" the circle by fixing one chair and then applying the linear arrangement logic to the remaining chairs.
+If we fix chair \(1\), we cannot choose chair \(2\) or chair \(10\). This leaves us with \(7\) chairs (chairs \(3\) to \(9\)) to choose from, and we need to choose \(2\) chairs from these \(7\) such that no two are adjacent.
+Using the result from part (a), the number of ways to choose \(2\) chairs from \(7\) chairs is:
+\[\binom{7-2+1}{2} = \binom{6}{2} = 15.\]
+
+\textbf{(c)}
+To choose \(k\) chairs from \(n\) chairs in a circle such that no two chosen chairs are adjacent,
+we generalise the approach from part (b). We fix the chair numbered \(1\), which means we cannot choose chair \(2\) or chair \(n\).
+This leaves us with \(n-3\) chairs (chairs \(3\) to \(n-1\)) to choose from, and we need to choose \(k-1\) chairs from these \(n-3\) chairs such that no two are adjacent.
+Using the result from part (a), the number of ways to choose \(k-1\) chairs from \(n-3\) chairs is:
+\[\binom{(n-3)-(k-1)+1}{k-1} = \binom{n-k-1}{k-1}.\]
+
+\section*{Summary}
+This problem explores the combinatorial methods for selecting chairs in both linear and circular
+arrangements while ensuring that no two selected chairs are adjacent. 
+The solutions leverage binomial coefficients to count the valid selections based on 
+the constraints provided.
+\end{document}
